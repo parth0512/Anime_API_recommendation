@@ -17,7 +17,6 @@ function LoginPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // In LoginPage.js handleAuth function
   const handleAuth = (e) => {
     e.preventDefault();
     if (form.email && form.password && (isSignup ? form.name : true)) {

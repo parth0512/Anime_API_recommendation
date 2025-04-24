@@ -7,7 +7,7 @@ import Sidebar from "./Sidebar";
 function Airing({ rendered }) {
   const { airingAnime, isSearch, searchResults } = useGlobalContext();
 
-  // Determine which data to display
+  // Determining which data to display
   const displayData = isSearch ? searchResults : airingAnime;
 
   return (
@@ -20,7 +20,7 @@ function Airing({ rendered }) {
                 src={anime.images.jpg.large_image_url}
                 alt={anime.title || "Anime"}
                 onError={(e) => {
-                  e.target.src = "https://via.placeholder.com/300x450"; // Fallback image
+                  e.target.src = "https://via.placeholder.com/300x450";
                 }}
               />
             </Link>

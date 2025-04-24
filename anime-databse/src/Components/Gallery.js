@@ -7,7 +7,6 @@ function Gallery() {
   const { getAnimePictures, pictures } = useGlobalContext();
   const { id } = useParams();
 
-  //state
   const [index, setIndex] = React.useState(0);
 
   const handleImageClick = (i) => {

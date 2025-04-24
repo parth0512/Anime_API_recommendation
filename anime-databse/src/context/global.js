@@ -53,7 +53,7 @@ const reducer = (state, action) => {
   }
 };
 
-// Get initial state from localStorage
+// i am getting initial state from localStorage
 const getInitialState = () => {
   const isAuthenticated =
     JSON.parse(localStorage.getItem("isAuthenticated")) || false;
@@ -76,13 +76,13 @@ export const GLobalContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, getInitialState());
   const [search, setSearch] = useState("");
 
-  // Persist state to localStorage
+  // getting Persist state to localStorage
   useEffect(() => {
     localStorage.setItem("isAuthenticated", state.isAuthenticated);
     localStorage.setItem("user", JSON.stringify(state.user));
   }, [state.isAuthenticated, state.user]);
 
-  // Login and Logout handlers
+  // Login and Logout handling
   const login = (userInfo) => {
     dispatch({ type: LOGIN, payload: userInfo });
   };
@@ -91,7 +91,7 @@ export const GLobalContextProvider = ({ children }) => {
     dispatch({ type: LOGOUT });
   };
 
-  // Handle input change for search
+  // Handle input change
   const handleChange = (e) => {
     setSearch(e.target.value);
     if (e.target.value === "") {
