@@ -17,6 +17,7 @@ function LoginPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // In LoginPage.js handleAuth function
   const handleAuth = (e) => {
     e.preventDefault();
     if (form.email && form.password && (isSignup ? form.name : true)) {
@@ -83,13 +84,13 @@ const LoginStyle = styled.div`
     background: #1f1f1f;
     padding: 3rem;
     border-radius: 20px;
-    box-shadow: 0 0 15px #5151e5;
+    box-shadow: 0 0 15px yellow;
     width: 400px;
     text-align: center;
 
     h1 {
       margin-bottom: 2rem;
-      background: linear-gradient(to right, #72edf2, #5151e5);
+      background: linear-gradient(to right, yellow, white);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -112,8 +113,8 @@ const LoginStyle = styled.div`
       button {
         padding: 0.7rem;
         border-radius: 10px;
-        background: linear-gradient(to right, #72edf2, #5151e5);
-        color: white;
+        background: linear-gradient(to right, yellow, white);
+        color: black;
         border: none;
         font-size: 1.1rem;
         cursor: pointer;
@@ -129,7 +130,7 @@ const LoginStyle = styled.div`
     p {
       margin-top: 1rem;
       span {
-        color: #72edf2;
+        color: yellow;
         cursor: pointer;
         font-weight: bold;
       }
