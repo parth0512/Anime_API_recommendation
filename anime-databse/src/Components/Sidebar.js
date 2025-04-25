@@ -12,7 +12,7 @@ function Sidebar() {
 
   return (
     <SidebarStyled>
-      <h3>Top 5 Popular</h3>
+      <h3 style={{ color: "white", width: "100%" }}>Top 5 Popular</h3>
       <div className="anime">
         {sorted?.slice(0, 5).map((anime) => {
           return (
@@ -29,10 +29,9 @@ function Sidebar() {
 
 const SidebarStyled = styled.div`
   margin-top: 2rem;
-  background-color: #fff;
-  border-top: 5px solid #e5e7eb;
+  background-color: black;
   padding-right: 5rem;
-  padding-left: 2rem;
+  padding-left: 2.2rem;
   padding-top: 2rem;
   .anime {
     display: flex;
@@ -41,16 +40,17 @@ const SidebarStyled = styled.div`
     img {
       width: 100%;
       border-radius: 5px;
-      border: 5px solid #e5e7eb;
+      border: 5px solid yellow;
     }
     a {
       margin-top: 1rem;
       display: flex;
       flex-direction: column;
+      text-decoration: none;
       gap: 0.4rem;
-      color: #27ae60;
+      color: rgb(255, 255, 255);
       h4 {
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
     }
   }
