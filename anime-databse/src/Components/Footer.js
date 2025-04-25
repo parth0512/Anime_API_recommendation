@@ -73,6 +73,7 @@ const Footer = () => {
 };
 
 const FooterContainer = styled.footer`
+  border-top: 3px solid #333;
   background: rgb(0, 0, 0);
   color: #fff;
   padding: 3rem 0 1rem;
@@ -89,7 +90,7 @@ const FooterContainer = styled.footer`
 
   .footer-section {
     h3 {
-      color: #5151e5;
+      color: yellow;
       margin-bottom: 1.5rem;
       font-size: 1.2rem;
     }
@@ -107,7 +108,7 @@ const FooterContainer = styled.footer`
           transition: color 0.3s;
 
           &:hover {
-            color: #72edf2;
+            color: yellow;
           }
         }
       }
@@ -124,7 +125,7 @@ const FooterContainer = styled.footer`
       transition: color 0.3s;
 
       &:hover {
-        color: #72edf2;
+        color: yellow;
       }
     }
   }
@@ -133,7 +134,7 @@ const FooterContainer = styled.footer`
     text-align: center;
     margin-top: 3rem;
     padding-top: 1.5rem;
-    border-top: 1px solid #333;
+    border-top: 3px solid #333;
     color: #888;
     font-size: 0.9rem;
 
@@ -141,7 +142,7 @@ const FooterContainer = styled.footer`
       margin: 0.5rem 0;
 
       a {
-        color: #72edf2;
+        color: yellow;
         text-decoration: none;
       }
     }
