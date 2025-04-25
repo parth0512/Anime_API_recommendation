@@ -37,22 +37,23 @@ function Upcoming({ rendered }) {
 
 const PopularStyled = styled.div`
   display: flex;
+  border-top: 3px solid #333;
   .upcoming-anime {
+    border-right: 3px solid #333;
     margin-top: 2rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
     padding-left: 5rem;
-    padding-right: 0;
+    padding-right: 30px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 2rem;
-    background-color: #fff;
-    border-top: 5px solid #e5e7eb;
+    background-color: black;
     a {
       height: 500px;
       border-radius: 7px;
-      border: 5px solid #e5e7eb;
+      border: 3px solid yellow;
     }
     a img {
       width: 100%;
