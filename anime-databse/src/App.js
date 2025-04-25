@@ -6,6 +6,7 @@ import LoginPage from "./Components/LoginPage";
 import { useGlobalContext } from "./context/global";
 import Gallery from "./Components/Gallery";
 
+
 function App() {
   const { isAuthenticated } = useGlobalContext();
 
