@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { useGlobalContext } from "../context/global";
@@ -7,13 +8,14 @@ function Gallery() {
   const { getAnimePictures, pictures } = useGlobalContext();
   const { id } = useParams();
 
+  //state
   const [index, setIndex] = React.useState(0);
 
   const handleImageClick = (i) => {
     setIndex(i);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     getAnimePictures(id);
   }, [id]);
 
@@ -41,8 +43,7 @@ function Gallery() {
               <img
                 src={picture?.jpg.image_url}
                 style={{
-                  border:
-                    i === index ? "3px solid #27AE60" : "3px solid #e5e7eb",
+                  border: i === index ? "3px solid #27AE60" : "3px solid red",
                   filter: i === index ? "grayscale(0)" : "grayscale(60%)",
                   transform: i === index ? "scale(1.1)" : "scale(1)",
                   transition: "all .3s ease-in-out",
@@ -58,7 +59,7 @@ function Gallery() {
 }
 
 const GalleryStyled = styled.div`
-  background-color: #ededed;
+  background-color: rgb(0, 0, 0);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -70,7 +71,7 @@ const GalleryStyled = styled.div`
     a {
       font-weight: 600;
       text-decoration: none;
-      color: #eb5757;
+      color: yellow;
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -78,11 +79,11 @@ const GalleryStyled = styled.div`
   }
   .big-image {
     display: inline-block;
-    padding: 2rem;
+    padding: 1rem;
     margin: 2rem 0;
-    background-color: #fff;
+    background-color: black;
     border-radius: 7px;
-    border: 5px solid #e5e7eb;
+    border: 5px solid yellow;
     position: relative;
     img {
       width: 350px;
@@ -96,8 +97,8 @@ const GalleryStyled = styled.div`
     width: 80%;
     padding: 2rem;
     border-radius: 7px;
-    background-color: #fff;
-    border: 5px solid #e5e7eb;
+    background-color: black;
+    border: 5px solid yellow;
     img {
       width: 6rem;
       height: 6rem;
