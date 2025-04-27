@@ -178,12 +178,13 @@ const AnimeItemStyle = styled.div`
     margin-top: 2rem;
     color: rgb(255, 255, 255);
     line-height: 1.7rem;
+    font-size: 13px;
     button {
       background-color: transparent;
       border: none;
       outline: none;
       cursor: pointer;
-      font-size: 1.2rem;
+      font-size: 13px;
       color: rgb(255, 252, 63);
       font-weight: 600;
     }
@@ -209,7 +210,9 @@ const AnimeItemStyle = styled.div`
     .detail {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+
       img {
+        padding-right: 20px;
         border-radius: 7px;
       }
     }
@@ -221,6 +224,7 @@ const AnimeItemStyle = styled.div`
       p {
         gap: 1rem;
         display: flex;
+        font-size: 13px;
       }
       p span:first-child {
         font-weight: 600;
