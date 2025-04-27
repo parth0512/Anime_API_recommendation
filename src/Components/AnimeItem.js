@@ -143,13 +143,17 @@ function AnimeItem() {
 }
 const AnimeItemStyle = styled.div`
   padding: 3rem 18rem;
-  background-color: rgb(215, 209, 209);
+  background-color: rgb(0, 0, 0);
   h1 {
     display: inline-block;
     font-size: 3rem;
     margin-bottom: 1.5rem;
     cursor: pointer;
-    background: linear-gradient(to right, #04afcd, rgb(43, 61, 224));
+    background: linear-gradient(
+      to right,
+      rgb(255, 252, 63),
+      rgb(242, 242, 242)
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.4s ease-in-out;
@@ -162,21 +166,26 @@ const AnimeItemStyle = styled.div`
     margin: 3rem 0;
     font-size: 2rem;
     cursor: pointer;
-    background: linear-gradient(to right, #04afcd, rgb(43, 61, 224));
+    background: linear-gradient(
+      to right,
+      rgb(255, 252, 63),
+      rgb(242, 242, 242)
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   .description {
     margin-top: 2rem;
-    color: #6c7983;
+    color: rgb(255, 255, 255);
     line-height: 1.7rem;
+    font-size: 13px;
     button {
       background-color: transparent;
       border: none;
       outline: none;
       cursor: pointer;
-      font-size: 1.2rem;
-      color: #04afcd;
+      font-size: 13px;
+      color: rgb(255, 252, 63);
       font-weight: 600;
     }
   }
@@ -186,22 +195,24 @@ const AnimeItemStyle = styled.div`
     align-items: center;
     iframe {
       outline: none;
-      border: 5px solid #e5e7eb;
+      border: 5px solid rgb(255, 255, 255);
       padding: 1.5rem;
       border-radius: 10px;
-      background-color: #ffffff;
+      background-color: rgb(145, 147, 152);
     }
   }
   .details {
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     border-radius: 20px;
     padding: 2rem;
-    border: 5px solid #e5e7eb;
-
+    border: 5px solid yellow;
+    color: white;
     .detail {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+
       img {
+        padding-right: 20px;
         border-radius: 7px;
       }
     }
@@ -213,10 +224,11 @@ const AnimeItemStyle = styled.div`
       p {
         gap: 1rem;
         display: flex;
+        font-size: 13px;
       }
       p span:first-child {
         font-weight: 600;
-        color: #6c7983;
+        color: rgb(255, 252, 63);
       }
     }
   }
@@ -227,21 +239,29 @@ const AnimeItemStyle = styled.div`
     background-color: #fff;
     padding: 2rem;
     border-radius: 20px;
-    border: 5px solid #e5e7eb;
+    border: 5px solid yellow;
+    background-color: rgb(0, 0, 0);
+
+    a {
+      text-decoration: none;
+    }
     .character {
       padding: 0.4rem 0.6rem;
       border-radius: 7px;
-      background-color: #ededed;
+      border: 3px solid white;
+      background-color: rgba(120, 28, 28, 0.68);
       transition: all 0.4s ease-in-out;
+
       img {
         width: 100%;
       }
+
       h4 {
         padding: 0.5rem 0;
-        color: #454e56;
+        color: rgb(255, 255, 255);
       }
       p {
-        color: #27ae60;
+        color: rgb(255, 252, 63);
       }
       &:hover {
         transform: translateY(-5px);

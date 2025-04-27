@@ -25,6 +25,7 @@ function Popular({ rendred }) {
   );
 }
 const PopularStyled = styled.div`
+  border-top: 3px solid #333;
   display: flex;
   .popular-anime {
     margin-top: 2rem;
@@ -36,13 +37,12 @@ const PopularStyled = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 2rem;
-    background-color: white;
-    border-top: 5px solid black;
+    background-color: balck;
 
     a {
       height: 500px;
       border-radius: 7px;
-      border: 5px solid black;
+      border: 3px solid yellow;
       img {
         width: 100%;
         height: 100%;

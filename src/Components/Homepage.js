@@ -1,15 +1,18 @@
 import { render } from "@testing-library/react";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react"; // Added useRef
 import Popular from "./Popular";
 import { useGlobalContext } from "../context/global";
 import styled from "styled-components";
 import Upcoming from "./Upcoming";
 import Airing from "./Airing";
 import Footer from "./Footer";
+import { Carousel } from "bootstrap";
+import MyCarousel from "./MyCarousel";
+import luffy from "../assests/luffy.png";
 
 function Homepage() {
   const {
-    handleSubmit,
+    handleSubmit: originalHandleSubmit,
     search,
     searchAnime,
     handleChange,
@@ -20,6 +23,17 @@ function Homepage() {
     isAuthenticated,
   } = useGlobalContext();
   const [rendered, setRendered] = useState("popular");
+
+  const scrollRef = useRef(null);
+
+  const scrollToContent = () => {
+    scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    originalHandleSubmit(e);
+    scrollToContent();
+  };
 
   const switchComponents = () => {
     switch (rendered) {
@@ -37,6 +51,86 @@ function Homepage() {
   return (
     <HomePageStyle>
       <header>
+        <div className="search-container">
+          <h1
+            style={{
+              color: "yellow",
+              marginRight: "60%",
+              fontSize: "50px",
+              fontStyle: "italic",
+              marginTop: "0%",
+              marginLeft: "50%",
+            }}
+          >
+            Anicom
+          </h1>
+          <div className="filter-btn popular-filter">
+            <button
+              onClick={() => {
+                setRendered("popular");
+                scrollToContent();
+              }}
+              style={{ width: "148px" }}
+            >
+              Popular🔥
+            </button>
+          </div>
+
+          <div className="filter-btn airing-filter">
+            <button
+              onClick={() => {
+                setRendered("airing");
+                getAiringAnime();
+                scrollToContent();
+              }}
+            >
+              Airing
+            </button>
+          </div>
+          <div className="filter-btn upcoming-filter">
+            <button
+              onClick={() => {
+                setRendered("upcoming");
+                getUpComingAnime();
+                scrollToContent();
+              }}
+            >
+              Upcoming
+            </button>
+          </div>
+          {isAuthenticated && (
+            <div className="filter-btn ">
+              <button onClick={logout}>Logout</button>
+            </div>
+          )}
+        </div>
+        <div className="Banner row">
+          <div className="col-lg-6 col-md-12" style={{ marginTop: "1.4%" }}>
+            <p>
+              Unleash Your Imagination <br />
+              with Unlimited <span>Anime</span>
+              <br /> Adventures
+            </p>
+            <form action="" className="search-form">
+              <div className="input-control">
+                <input
+                  type="text"
+                  placeholder="Search Anime"
+                  value={search}
+                  onChange={handleChange}
+                />
+                <button type="submit" onClick={handleSubmit}>
+                  Search
+                </button>
+              </div>
+            </form>
+          </div>
+          <div className="col-lg-6 col-md-12 d-flex justify-content-center align-items-center">
+            <img src={luffy} alt="Luffy" style={{ marginLeft: "25%" }} />
+          </div>
+        </div>
+
+        {/* <MyCarousel /> */}
         <div className="logo">
           <h1>
             {rendered === "popular"
@@ -46,7 +140,7 @@ function Homepage() {
               : "㍿ Upcoming Anime ㍿"}
           </h1>
         </div>
-        <div className="search-container">
+        <div className="search-container-2">
           <div className="filter-btn popular-filter">
             <button
               onClick={() => {
@@ -78,27 +172,9 @@ function Homepage() {
               Upcoming
             </button>
           </div>
-          <form action="" className="search-form">
-            <div className="input-control">
-              <input
-                type="text"
-                placeholder="Search Anime"
-                value={search}
-                onChange={handleChange}
-              />
-              <button type="submit" onClick={handleSubmit}>
-                Search
-              </button>
-            </div>
-          </form>
-          {isAuthenticated && (
-            <div className="filter-btn ">
-              <button onClick={logout}>Logout</button>
-            </div>
-          )}
         </div>
       </header>
-      {switchComponents()}
+      <div ref={scrollRef}>{switchComponents()}</div>
       <Footer />
     </HomePageStyle>
   );
@@ -117,28 +193,33 @@ const HomePageStyle = styled.div`
     }
 
     .logo {
+      margin-top: 0%;
       display: flex;
       align-items: center;
       justify-content: center;
       letter-spacing: 3px;
-      margin-bottom: 2rem;
-      background: linear-gradient(to right, #72edf2, #5151e5);
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, yellow, white);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 
       h1 {
         font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
           "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-        font-size: 70px;
+        font-size: 40px;
         font-weight: 700;
       }
     }
 
     .search-container {
+      z-index: 1000;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 1rem;
+      margin-right: 30%;
+      margin-top: 1%;
+      margin-bottom: 5%;
 
       button {
         display: flex;
@@ -147,54 +228,108 @@ const HomePageStyle = styled.div`
         padding: 0.7rem 1.5rem;
         outline: none;
         border-radius: 30px;
-        font-size: 1.2rem;
+        font-size: 1%.5;
         background-color: #fff;
         cursor: pointer;
         transition: all 0.4s ease-in-out;
         font-family: inherit;
-        border: 3px solid #e5e7eb;
+        border: none;
       }
 
       .filter-btn {
         button {
           background-color: black;
-          background: linear-gradient(to right, #72edf2, #5151e5);
+          background: linear-gradient(to right, yellow, white);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
       }
+    }
+    .search-container-2 {
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10rem;
+      margin-top: 5%;
+      margin-bottom: -3%;
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.7rem 1.5rem;
+        outline: none;
+        border-radius: 30px;
+        font-size: 1%.5;
+        background-color: #fff;
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+        font-family: inherit;
+        border: none;
+      }
+
+      .filter-btn {
+        button {
+          background-color: black;
+          background: linear-gradient(to right, yellow, white);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+    .Banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+      padding: 4rem 0;
+      margin-top: -10%;
+
+      p {
+        font-size: 40px;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+
+        span {
+          font-style: italic;
+          color: yellow;
+        }
+      }
 
       form {
-        position: relative;
-        width: 100%;
         .input-control {
           position: relative;
-          transition: all 0.4s ease-in-out;
+          width: 100%;
+          margin-left: -2%;
         }
 
-        .input-control input {
+        input {
           width: 100%;
           padding: 0.7rem 1rem;
-          border: none;
-          outline: none;
-          border-radius: 30px;
-          font-size: 1.2rem;
-          background-color: #fff;
-          border: 3px solid #e5e7eb;
-          transition: all 0.4s ease-in-out;
+          border-radius: 20px;
+          border: 2px solid #e5e7eb;
           background-color: black;
           color: white;
+          font-size: 1.2rem;
+          outline: none;
         }
 
-        .input-control button {
-          background: linear-gradient(to right, #72edf2, #5151e5);
+        button {
+          background: linear-gradient(to right, yellow, white);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           position: absolute;
-          right: 0;
+          right: 20px;
           top: 50%;
           transform: translateY(-50%);
+          border: none;
         }
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
       }
     }
   }

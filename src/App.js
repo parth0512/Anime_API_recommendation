@@ -5,6 +5,7 @@ import Homepage from "./Components/Homepage";
 import LoginPage from "./Components/LoginPage";
 import { useGlobalContext } from "./context/global";
 import Gallery from "./Components/Gallery";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const { isAuthenticated } = useGlobalContext();
