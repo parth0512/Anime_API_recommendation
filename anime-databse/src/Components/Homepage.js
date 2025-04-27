@@ -55,10 +55,11 @@ function Homepage() {
           <h1
             style={{
               color: "yellow",
-              marginRight: "68%",
+              marginRight: "60%",
               fontSize: "50px",
               fontStyle: "italic",
               marginTop: "0%",
+              marginLeft: "50%",
             }}
           >
             Anicom
@@ -104,10 +105,10 @@ function Homepage() {
           )}
         </div>
         <div className="Banner row">
-          <div className="col-6">
+          <div className="col-lg-6 col-md-12" style={{ marginTop: "1.4%" }}>
             <p>
               Unleash Your Imagination <br />
-              with Unlimited <span> Anime</span>
+              with Unlimited <span>Anime</span>
               <br /> Adventures
             </p>
             <form action="" className="search-form">
@@ -124,22 +125,11 @@ function Homepage() {
               </div>
             </form>
           </div>
-          <div className="col-6">
-            <img
-              src={luffy}
-              style={{
-                position: "relative",
-                overflowX: "hidden",
-                width: "150%",
-                height: "130%",
-                marginLeft: "60%",
-                marginTop: "-7%",
-                marginBottom: "20%",
-                zIndex: "0",
-              }}
-            />
+          <div className="col-lg-6 col-md-12 d-flex justify-content-center align-items-center">
+            <img src={luffy} alt="Luffy" style={{ marginLeft: "25%" }} />
           </div>
         </div>
+
         {/* <MyCarousel /> */}
         <div className="logo">
           <h1>
@@ -203,7 +193,7 @@ const HomePageStyle = styled.div`
     }
 
     .logo {
-      margin-top: 10%;
+      margin-top: 0%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -224,12 +214,12 @@ const HomePageStyle = styled.div`
     .search-container {
       z-index: 1000;
       display: flex;
-      align-items: end;
-      justify-content: end;
-      gap: 2rem;
-      margin-right: -30%;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-right: 30%;
       margin-top: 1%;
-      margin-bottom: 10%;
+      margin-bottom: 5%;
 
       button {
         display: flex;
@@ -289,46 +279,43 @@ const HomePageStyle = styled.div`
       }
     }
     .Banner {
-      width: 100%;
-      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       color: white;
+      padding: 4rem 0;
+      margin-top: -10%;
+
       p {
-        margin-top: 22%;
-        font-size: 5rem;
-        margin-right: -90%;
-        margin-left: -80%;
+        font-size: 40px;
+        margin-bottom: 2rem;
+        line-height: 1.2;
 
         span {
           font-style: italic;
           color: yellow;
         }
       }
+
       form {
-        position: relative;
-        width: 200%;
-
-        margin-left: -80%;
-
         .input-control {
           position: relative;
-          transition: all 0.4s ease-in-out;
+          width: 100%;
+          margin-left: -2%;
         }
 
-        .input-control input {
+        input {
           width: 100%;
           padding: 0.7rem 1rem;
-          border: none;
-          outline: none;
           border-radius: 20px;
-          font-size: 1.2rem;
-          background-color: #fff;
           border: 2px solid #e5e7eb;
-          transition: all 0.4s ease-in-out;
           background-color: black;
           color: white;
+          font-size: 1.2rem;
+          outline: none;
         }
 
-        .input-control button {
+        button {
           background: linear-gradient(to right, yellow, white);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -338,6 +325,11 @@ const HomePageStyle = styled.div`
           transform: translateY(-50%);
           border: none;
         }
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
       }
     }
   }
