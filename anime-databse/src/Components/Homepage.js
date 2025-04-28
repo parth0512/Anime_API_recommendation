@@ -222,7 +222,7 @@ const HomePageStyle = styled.div`
       h1{
       margin-left:1%;
       color:yellow;
-      margin-right:60%
+      margin-right:50%
       }
       button {
         display: flex;
