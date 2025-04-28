@@ -53,14 +53,14 @@ function Homepage() {
       <header>
         <div className="search-container">
           <h1
-            style={{
-              color: "yellow",
-              marginRight: "60%",
-              fontSize: "50px",
-              fontStyle: "italic",
-              marginTop: "0%",
-              marginLeft: "50%",
-            }}
+            // style={{
+            //   color: "yellow",
+            //   marginRight: "70%",
+            //   fontSize: "50px",
+            //   fontStyle: "italic",
+            //   marginTop: "0%",
+            //   marginLeft: "40%",
+            // }}
           >
             Anicom
           </h1>
@@ -184,12 +184,12 @@ const HomePageStyle = styled.div`
   background-color: black;
   header {
     padding: 2rem 5rem;
-    width: 60%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     transition: all 0.4s ease-in-out;
     background-color: black;
-    @media screen and (max-width: 1530px) {
-      width: 95%;
+ @media screen and (max-width: 768px) {
+      padding: 2rem 1rem;
     }
 
     .logo {
@@ -212,19 +212,22 @@ const HomePageStyle = styled.div`
     }
 
     .search-container {
-      z-index: 1000;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       gap: 1rem;
-      margin-right: 30%;
-      margin-top: 1%;
-      margin-bottom: 5%;
+      overflow-x: hidden;
+      margin-bottom:5%;
 
+      h1{
+      margin-left:1%;
+      color:yellow;
+      margin-right:60%
+      }
       button {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0rem;
         padding: 0.7rem 1.5rem;
         outline: none;
         border-radius: 30px;
@@ -252,7 +255,7 @@ const HomePageStyle = styled.div`
       justify-content: center;
       gap: 10rem;
       margin-top: 5%;
-      margin-bottom: -3%;
+      margin-bottom: 0%;
 
       button {
         display: flex;
@@ -284,7 +287,16 @@ const HomePageStyle = styled.div`
       justify-content: space-between;
       color: white;
       padding: 4rem 0;
+        width: 100%; // Ensure full width
+      margin: 0 auto; // Center content within full width
+      padding: 4rem 0;
       margin-top: -10%;
+
+      // Add responsive padding
+      @media screen and (max-width: 768px) {
+        padding: 2rem 0;
+        margin-top: 0;
+      }
 
       p {
         font-size: 40px;
