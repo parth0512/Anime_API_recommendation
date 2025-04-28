@@ -178,13 +178,13 @@ const AnimeItemStyle = styled.div`
     margin-top: 2rem;
     color: rgb(255, 255, 255);
     line-height: 1.7rem;
-    font-size: 13px;
+    font-size: 15px;
     button {
       background-color: transparent;
       border: none;
       outline: none;
       cursor: pointer;
-      font-size: 13px;
+      font-size: 15px;
       color: rgb(255, 252, 63);
       font-weight: 600;
     }
@@ -222,9 +222,10 @@ const AnimeItemStyle = styled.div`
       justify-content: space-around;
 
       p {
+        margin-top: 3%;
         gap: 1rem;
         display: flex;
-        font-size: 13px;
+        font-size: 16px;
       }
       p span:first-child {
         font-weight: 600;
