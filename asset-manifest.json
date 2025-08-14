@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Anime_Api_recommendation/static/css/main.3ce7bc41.css",
+    "main.js": "/Anime_Api_recommendation/static/js/main.ecd2bad8.js",
+    "static/media/banner3.jpg": "/Anime_Api_recommendation/static/media/banner3.a592a0a623139d14b027.jpg",
+    "static/media/banner1.jpg": "/Anime_Api_recommendation/static/media/banner1.39bd56553e44fb14e69f.jpg",
+    "static/media/banner2.jpg": "/Anime_Api_recommendation/static/media/banner2.59ebd491220f5c286ec4.jpg",
+    "static/media/luffy.png": "/Anime_Api_recommendation/static/media/luffy.4ea7f77167d860918084.png",
+    "index.html": "/Anime_Api_recommendation/index.html",
+    "main.3ce7bc41.css.map": "/Anime_Api_recommendation/static/css/main.3ce7bc41.css.map",
+    "main.ecd2bad8.js.map": "/Anime_Api_recommendation/static/js/main.ecd2bad8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3ce7bc41.css",
+    "static/js/main.ecd2bad8.js"
+  ]
+}
