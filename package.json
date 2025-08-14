@@ -2,7 +2,7 @@
   "name": "anime-database",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://parth0512.github.io/Anime_API_recommendation",
+  "homepage": "https://parth5012.github.io/Anime_Api_recommendation",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
