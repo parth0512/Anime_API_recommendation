@@ -11,7 +11,7 @@ function App() {
   const { isAuthenticated } = useGlobalContext();
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Anime_Api_recommendation">
       <Routes>
         {!isAuthenticated ? (
           <Route path="*" element={<LoginPage />} />
